@@ -162,9 +162,6 @@ alien-herpetofauna-belgium:taxon:93f032ef550764f09f06b824bfe26168,Iberia | Moroc
 alien-herpetofauna-belgium:taxon:942b9af8aae3ca69d2016d7960dc6956,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:942b9af8aae3ca69d2016d7960dc6956,escape_pet | release_other,introduction pathway,en
 alien-herpetofauna-belgium:taxon:942b9af8aae3ca69d2016d7960dc6956,Eastern Asia,native range,en
-alien-herpetofauna-belgium:taxon:94baed052bd43a218318c1f99697d081,casual,degree of establishment,en
-alien-herpetofauna-belgium:taxon:94baed052bd43a218318c1f99697d081,escape_pet | release_other,introduction pathway,en
-alien-herpetofauna-belgium:taxon:94baed052bd43a218318c1f99697d081,Madagascar,native range,en
 alien-herpetofauna-belgium:taxon:97e0c3c6761da310202ce679ffb02f0e,established,degree of establishment,en
 alien-herpetofauna-belgium:taxon:97e0c3c6761da310202ce679ffb02f0e,release_landscape_improvement | release_conservation,introduction pathway,en
 alien-herpetofauna-belgium:taxon:97e0c3c6761da310202ce679ffb02f0e,Europe,native range,en
@@ -264,6 +261,9 @@ alien-herpetofauna-belgium:taxon:d98583b9eb43e884fdb10e6db7cf0d50,escape_pet | r
 alien-herpetofauna-belgium:taxon:d98583b9eb43e884fdb10e6db7cf0d50,Europe,native range,en
 alien-herpetofauna-belgium:taxon:db2e5b8fb798afe736d22f7ae3c1a3e3,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:db2e5b8fb798afe736d22f7ae3c1a3e3,escape_pet | release_other,introduction pathway,en
+alien-herpetofauna-belgium:taxon:de10c9dd3e8845310c5f50ba9677691e,casual,degree of establishment,en
+alien-herpetofauna-belgium:taxon:de10c9dd3e8845310c5f50ba9677691e,escape_pet | release_other,introduction pathway,en
+alien-herpetofauna-belgium:taxon:de10c9dd3e8845310c5f50ba9677691e,Madagascar,native range,en
 alien-herpetofauna-belgium:taxon:df7a6aafcefb4823202aa3bfe6f8ad59,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:df7a6aafcefb4823202aa3bfe6f8ad59,Asia | Introduced elsewhere,native range,en
 alien-herpetofauna-belgium:taxon:e2ebcc22f42f1657be8bd16ffcf20406,casual,degree of establishment,en

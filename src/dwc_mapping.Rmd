@@ -311,7 +311,6 @@ distribution %<>% mutate(dwc_source = source)
 distribution %<>% mutate(dwc_occurrenceRemarks = remarks) 
 ```
 
-
 ## Create species profile extension
 
 ```{r}
