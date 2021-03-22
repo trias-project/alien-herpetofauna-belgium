@@ -39,6 +39,9 @@ alien-herpetofauna-belgium:taxon:233314dc80badae55523d41e038b3f2d,escape_pet | r
 alien-herpetofauna-belgium:taxon:26b25c88b457341c87edb0dbca4bdcba,established,degree of establishment,en
 alien-herpetofauna-belgium:taxon:26b25c88b457341c87edb0dbca4bdcba,stowaway_other,introduction pathway,en
 alien-herpetofauna-belgium:taxon:26b25c88b457341c87edb0dbca4bdcba,Europe,native range,en
+alien-herpetofauna-belgium:taxon:2b5333bc423aaa15491b8575fbffe5b8,casual,degree of establishment,en
+alien-herpetofauna-belgium:taxon:2b5333bc423aaa15491b8575fbffe5b8,escape_pet | release_other,introduction pathway,en
+alien-herpetofauna-belgium:taxon:2b5333bc423aaa15491b8575fbffe5b8,Eastern Asia,native range,en
 alien-herpetofauna-belgium:taxon:2e5a2ac12840e368cef4618039165c18,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:2e5a2ac12840e368cef4618039165c18,escape_pet | release_other,introduction pathway,en
 alien-herpetofauna-belgium:taxon:2e5a2ac12840e368cef4618039165c18,Central America | South America,native range,en
@@ -238,9 +241,6 @@ alien-herpetofauna-belgium:taxon:c744d57c2c1a6dc9b72467bc066640c7,Asia | Introdu
 alien-herpetofauna-belgium:taxon:c853660656a6faf1dbf25b120a37fb69,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:c853660656a6faf1dbf25b120a37fb69,escape_pet | release_other,introduction pathway,en
 alien-herpetofauna-belgium:taxon:c853660656a6faf1dbf25b120a37fb69,Asia,native range,en
-alien-herpetofauna-belgium:taxon:cd7d2bda9bf91acd10f9b2c958621558,casual,degree of establishment,en
-alien-herpetofauna-belgium:taxon:cd7d2bda9bf91acd10f9b2c958621558,escape_pet | release_other,introduction pathway,en
-alien-herpetofauna-belgium:taxon:cd7d2bda9bf91acd10f9b2c958621558,Eastern Asia,native range,en
 alien-herpetofauna-belgium:taxon:cec9b34e435dab7b703ae88b3c9c686b,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:cec9b34e435dab7b703ae88b3c9c686b,escape_pet | release_other,introduction pathway,en
 alien-herpetofauna-belgium:taxon:cec9b34e435dab7b703ae88b3c9c686b,North America,native range,en
