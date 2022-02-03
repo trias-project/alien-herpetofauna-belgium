@@ -409,7 +409,7 @@ Map `type`
 degree_of_establishment %<>% mutate(type = "degree of establishment") 
 ```
 
-### Introduction pathway
+### Pathway of introduction
 
 Create a dataframe with unique taxa only (ignoring multiple distribution rows):
 
@@ -431,10 +431,44 @@ Remove records for which `introduction_pathway` is `NA`:
 introduction_pathway %<>% filter(!is.na(introduction_pathway)) 
 ```
 
+`introduction_pathway` contains multiple values (currently not more than 3), so we separate it in 2 columns:
+
+```{r}
+introduction_pathway %<>% separate(introduction_pathway, 
+  into = c("pathway_1", "pathway_2", "pathway_3"),
+  sep = "\\s\\|\\s",
+  remove = FALSE)
+```
+
+Gather in a `key` and `value` column:
+
+```{r}
+introduction_pathway %<>% gather(
+  key, value,
+  pathway_1, pathway_2,pathway_3,
+  na.rm = TRUE, # Also removes records for which there is no native_range_1
+  convert = FALSE
+)
+```
+
+Add prefix `cbd_2014_pathway:`
+
+```{r}
+introduction_pathway %<>% mutate(mapped_value = paste ("cbd_2014_pathway", value, sep = ":"))
+```
+
+Sumarize `value`
+
+```{r}
+introduction_pathway %>%
+  group_by(mapped_value) %>%
+  count()
+```
+
 Map `description`
 
 ```{r}
-introduction_pathway %<>% mutate(description = introduction_pathway) 
+introduction_pathway %<>% mutate(description = mapped_value) 
 ```
 
 Map `type` field
@@ -442,6 +476,8 @@ Map `type` field
 ```{r}
 introduction_pathway %<>% mutate(type = "introduction pathway") 
 ```
+
+
 
 ### Native range
 

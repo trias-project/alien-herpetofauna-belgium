@@ -1,6 +1,8 @@
 taxonID,isMarine,isFreshwater,isTerrestrial
 alien-herpetofauna-belgium:taxon:00173d67b213ebc5eb0c1a29b7e422dc,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:00173d67b213ebc5eb0c1a29b7e422dc,FALSE,FALSE,TRUE
+alien-herpetofauna-belgium:taxon:00173d67b213ebc5eb0c1a29b7e422dc,FALSE,FALSE,TRUE
+alien-herpetofauna-belgium:taxon:0071508c44f068ff6d46a00c66546945,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:0071508c44f068ff6d46a00c66546945,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:04b8603a65a17134d98dc10e9b6460eb,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:0fe00308f2274b539fd7ffc022fec1ed,FALSE,FALSE,TRUE
@@ -10,8 +12,10 @@ alien-herpetofauna-belgium:taxon:12f3f7396362d8052953e9d2e6a8bd6e,FALSE,FALSE,TR
 alien-herpetofauna-belgium:taxon:134fe41ee2f30e5d1002761ef0c8a0d8,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:14a3424984726e6b79c45b3fd6c97d78,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:14a886aa3e70d20c19b95089e84cf719,FALSE,FALSE,TRUE
+alien-herpetofauna-belgium:taxon:17d5724bed39b179f4f21452ee844661,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:1a241500ba58174cc3c9dddc61718d62,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:1a241500ba58174cc3c9dddc61718d62,FALSE,TRUE,TRUE
+alien-herpetofauna-belgium:taxon:1c8f3f90a4cdd84406d1687b5201e21a,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:1e37d2d11e5a99e56b782a719f85dbbb,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:233314dc80badae55523d41e038b3f2d,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:26b25c88b457341c87edb0dbca4bdcba,FALSE,FALSE,TRUE
@@ -43,6 +47,7 @@ alien-herpetofauna-belgium:taxon:4a32eb37dd44f83925f95e39ee2da0a0,FALSE,TRUE,TRU
 alien-herpetofauna-belgium:taxon:4a32eb37dd44f83925f95e39ee2da0a0,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:4a32eb37dd44f83925f95e39ee2da0a0,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:51c001f265c9a71e54b3560f72b04361,FALSE,FALSE,TRUE
+alien-herpetofauna-belgium:taxon:535325733bc0d2de792c94db229f6236,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:584c397bee0d1e9af38cf6400a07af86,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:58e54c752ab1a10d28157e225f283408,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:59464973fe73bb7ce6c6f41b8db2c469,FALSE,TRUE,TRUE
@@ -53,13 +58,16 @@ alien-herpetofauna-belgium:taxon:5c173337ff181527acde9b275d17ae48,FALSE,FALSE,TR
 alien-herpetofauna-belgium:taxon:5f4c8aad83dea48eb1aadf0ac0b2bd08,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:615867d3e0f187d9543e375733aa2483,FALSE,TRUE,FALSE
 alien-herpetofauna-belgium:taxon:619409b42139334b2517e7b7f3024b48,FALSE,TRUE,TRUE
+alien-herpetofauna-belgium:taxon:619409b42139334b2517e7b7f3024b48,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:688173963b84810187d7b83e39b2eaf4,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:69c04e84e8c6abc981ad1c57068556cb,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:69c04e84e8c6abc981ad1c57068556cb,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:6c4815cf6cffb1dc157c0eff5c4b4bb4,FALSE,FALSE,TRUE
+alien-herpetofauna-belgium:taxon:70293e0e1a8626d282e2ce4fa38ab7c9,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:708c65892ee9c610281537e9a4b2c11f,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:74b25254434e727a0212512792e97d52,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:74b25254434e727a0212512792e97d52,FALSE,TRUE,TRUE
+alien-herpetofauna-belgium:taxon:7755fc64fafe2f680dc851e927acec8e,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:7755fc64fafe2f680dc851e927acec8e,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:7755fc64fafe2f680dc851e927acec8e,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:792632118267d7cf07d4580725dc6db1,FALSE,FALSE,TRUE
@@ -81,6 +89,7 @@ alien-herpetofauna-belgium:taxon:9103d24bd38c199b9bfb760a140d9c22,FALSE,FALSE,TR
 alien-herpetofauna-belgium:taxon:9103d24bd38c199b9bfb760a140d9c22,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:93f032ef550764f09f06b824bfe26168,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:942b9af8aae3ca69d2016d7960dc6956,FALSE,TRUE,TRUE
+alien-herpetofauna-belgium:taxon:94ea9f049eededaa180f694e63d1d3b1,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:97e0c3c6761da310202ce679ffb02f0e,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:97e0c3c6761da310202ce679ffb02f0e,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:98508dcb90614aaaa27694fb8811b7f5,FALSE,FALSE,TRUE
@@ -92,6 +101,7 @@ alien-herpetofauna-belgium:taxon:a3bfde56eee7e6b09c5248291b4951d4,FALSE,TRUE,TRU
 alien-herpetofauna-belgium:taxon:a4c9bbe8492ef7ef785100821f0c72ec,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:a62288431e07ca1ed25a5197d12e85aa,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:aad6c377da61735b1c5461e877edf03f,FALSE,TRUE,TRUE
+alien-herpetofauna-belgium:taxon:ae80a81ee4f076c202e981afd3d91ce4,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:ae80a81ee4f076c202e981afd3d91ce4,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:af911b1a1272da9d074476a58015386f,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:aff6ade6b4337dc7d013ff4a68cc6844,FALSE,TRUE,TRUE
@@ -107,10 +117,14 @@ alien-herpetofauna-belgium:taxon:bfcc3b0818bbb98a7b2ee4e54116386c,FALSE,TRUE,TRU
 alien-herpetofauna-belgium:taxon:bfcc3b0818bbb98a7b2ee4e54116386c,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:c06d2716c21a95e2dfbee9d8b3e6f26d,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:c0c9cd1c21da4c817adb6003f8bb5bd7,FALSE,TRUE,TRUE
+alien-herpetofauna-belgium:taxon:c0c9cd1c21da4c817adb6003f8bb5bd7,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:c2da78106f71af0c16caa8376d4834d6,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:c53ba30dc2319c9f31d074420251f777,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:c744d57c2c1a6dc9b72467bc066640c7,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:c853660656a6faf1dbf25b120a37fb69,FALSE,TRUE,TRUE
+alien-herpetofauna-belgium:taxon:cad99dfac5d13fd88f386ea0214c60a3,FALSE,TRUE,TRUE
+alien-herpetofauna-belgium:taxon:cb64e2a4146c6a849a072d1edc83ae43,FALSE,FALSE,TRUE
+alien-herpetofauna-belgium:taxon:cd49a0416885c2e883d12561289d6614,FALSE,TRUE,TRUE
 alien-herpetofauna-belgium:taxon:cec9b34e435dab7b703ae88b3c9c686b,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:d10a2f81ec69b7de222c600d82d85c65,FALSE,FALSE,TRUE
 alien-herpetofauna-belgium:taxon:d4b7adfe4d5857a15e3a05b676398888,FALSE,FALSE,TRUE
