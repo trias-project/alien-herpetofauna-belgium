@@ -474,7 +474,7 @@ introduction_pathway %<>% mutate(description = mapped_value)
 Map `type` field
 
 ```{r}
-introduction_pathway %<>% mutate(type = "introduction pathway") 
+introduction_pathway %<>% mutate(type = "pathway") 
 ```
 
 
