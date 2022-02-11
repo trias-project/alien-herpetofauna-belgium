@@ -13,10 +13,6 @@ alien-herpetofauna-belgium:taxon:0fe00308f2274b539fd7ffc022fec1ed,casual,degree 
 alien-herpetofauna-belgium:taxon:0fe00308f2274b539fd7ffc022fec1ed,cbd_2014_pathway:escape_pet,pathway,en
 alien-herpetofauna-belgium:taxon:0fe00308f2274b539fd7ffc022fec1ed,cbd_2014_pathway:release_other,pathway,en
 alien-herpetofauna-belgium:taxon:0fe00308f2274b539fd7ffc022fec1ed,Madagascar,native range,en
-alien-herpetofauna-belgium:taxon:11f754026fc161e815b828b2126129f7,casual,degree of establishment,en
-alien-herpetofauna-belgium:taxon:11f754026fc161e815b828b2126129f7,cbd_2014_pathway:escape_pet,pathway,en
-alien-herpetofauna-belgium:taxon:11f754026fc161e815b828b2126129f7,cbd_2014_pathway:release_other,pathway,en
-alien-herpetofauna-belgium:taxon:11f754026fc161e815b828b2126129f7,North America,native range,en
 alien-herpetofauna-belgium:taxon:120fce858323335c4bfb07eb99b687f4,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:120fce858323335c4bfb07eb99b687f4,cbd_2014_pathway:stowaway_container,pathway,en
 alien-herpetofauna-belgium:taxon:120fce858323335c4bfb07eb99b687f4,Asia,native range,en
@@ -41,10 +37,6 @@ alien-herpetofauna-belgium:taxon:17d5724bed39b179f4f21452ee844661,casual,degree 
 alien-herpetofauna-belgium:taxon:17d5724bed39b179f4f21452ee844661,cbd_2014_pathway:escape_pet,pathway,en
 alien-herpetofauna-belgium:taxon:17d5724bed39b179f4f21452ee844661,cbd_2014_pathway:release_other,pathway,en
 alien-herpetofauna-belgium:taxon:17d5724bed39b179f4f21452ee844661,Southwestern Europe,native range,en
-alien-herpetofauna-belgium:taxon:1a241500ba58174cc3c9dddc61718d62,casual,degree of establishment,en
-alien-herpetofauna-belgium:taxon:1a241500ba58174cc3c9dddc61718d62,cbd_2014_pathway:escape_pet,pathway,en
-alien-herpetofauna-belgium:taxon:1a241500ba58174cc3c9dddc61718d62,cbd_2014_pathway:release_other,pathway,en
-alien-herpetofauna-belgium:taxon:1a241500ba58174cc3c9dddc61718d62,North America,native range,en
 alien-herpetofauna-belgium:taxon:1c8f3f90a4cdd84406d1687b5201e21a,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:1c8f3f90a4cdd84406d1687b5201e21a,cbd_2014_pathway:escape_pet,pathway,en
 alien-herpetofauna-belgium:taxon:1c8f3f90a4cdd84406d1687b5201e21a,cbd_2014_pathway:release_other,pathway,en
@@ -53,6 +45,10 @@ alien-herpetofauna-belgium:taxon:1e37d2d11e5a99e56b782a719f85dbbb,casual,degree 
 alien-herpetofauna-belgium:taxon:1e37d2d11e5a99e56b782a719f85dbbb,cbd_2014_pathway:escape_pet,pathway,en
 alien-herpetofauna-belgium:taxon:1e37d2d11e5a99e56b782a719f85dbbb,cbd_2014_pathway:release_other,pathway,en
 alien-herpetofauna-belgium:taxon:1e37d2d11e5a99e56b782a719f85dbbb,Eastern Asia,native range,en
+alien-herpetofauna-belgium:taxon:219f5fd2da69430a0f8475eb5390f670,casual,degree of establishment,en
+alien-herpetofauna-belgium:taxon:219f5fd2da69430a0f8475eb5390f670,cbd_2014_pathway:escape_pet,pathway,en
+alien-herpetofauna-belgium:taxon:219f5fd2da69430a0f8475eb5390f670,cbd_2014_pathway:release_other,pathway,en
+alien-herpetofauna-belgium:taxon:219f5fd2da69430a0f8475eb5390f670,North America,native range,en
 alien-herpetofauna-belgium:taxon:233314dc80badae55523d41e038b3f2d,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:233314dc80badae55523d41e038b3f2d,cbd_2014_pathway:escape_pet,pathway,en
 alien-herpetofauna-belgium:taxon:233314dc80badae55523d41e038b3f2d,cbd_2014_pathway:release_other,pathway,en
@@ -81,10 +77,6 @@ alien-herpetofauna-belgium:taxon:31c7a98de3048853f435c1f4a1ff6cd6,cbd_2014_pathw
 alien-herpetofauna-belgium:taxon:31c7a98de3048853f435c1f4a1ff6cd6,USA,native range,en
 alien-herpetofauna-belgium:taxon:33d0f7474bf65769f754a5684cafbd65,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:33d0f7474bf65769f754a5684cafbd65,Europe,native range,en
-alien-herpetofauna-belgium:taxon:34578d09afa85247cfc1d1d993e85f23,casual,degree of establishment,en
-alien-herpetofauna-belgium:taxon:34578d09afa85247cfc1d1d993e85f23,cbd_2014_pathway:escape_pet,pathway,en
-alien-herpetofauna-belgium:taxon:34578d09afa85247cfc1d1d993e85f23,cbd_2014_pathway:release_other,pathway,en
-alien-herpetofauna-belgium:taxon:34578d09afa85247cfc1d1d993e85f23,North America,native range,en
 alien-herpetofauna-belgium:taxon:36180715bd5c03110cb4a4c0f46af524,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:36180715bd5c03110cb4a4c0f46af524,cbd_2014_pathway:contaminant_timber,pathway,en
 alien-herpetofauna-belgium:taxon:36180715bd5c03110cb4a4c0f46af524,Africa,native range,en
@@ -148,6 +140,10 @@ alien-herpetofauna-belgium:taxon:5f4c8aad83dea48eb1aadf0ac0b2bd08,casual,degree 
 alien-herpetofauna-belgium:taxon:5f4c8aad83dea48eb1aadf0ac0b2bd08,cbd_2014_pathway:escape_pet,pathway,en
 alien-herpetofauna-belgium:taxon:5f4c8aad83dea48eb1aadf0ac0b2bd08,cbd_2014_pathway:release_other,pathway,en
 alien-herpetofauna-belgium:taxon:5f4c8aad83dea48eb1aadf0ac0b2bd08,Europe,native range,en
+alien-herpetofauna-belgium:taxon:60d51d0f7f3382357f18763b8d972943,casual,degree of establishment,en
+alien-herpetofauna-belgium:taxon:60d51d0f7f3382357f18763b8d972943,cbd_2014_pathway:escape_pet,pathway,en
+alien-herpetofauna-belgium:taxon:60d51d0f7f3382357f18763b8d972943,cbd_2014_pathway:release_other,pathway,en
+alien-herpetofauna-belgium:taxon:60d51d0f7f3382357f18763b8d972943,North America,native range,en
 alien-herpetofauna-belgium:taxon:615867d3e0f187d9543e375733aa2483,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:615867d3e0f187d9543e375733aa2483,cbd_2014_pathway:stowaway_other,pathway,en
 alien-herpetofauna-belgium:taxon:615867d3e0f187d9543e375733aa2483,North America,native range,en
@@ -409,6 +405,10 @@ alien-herpetofauna-belgium:taxon:f449e769066c3570ca3f117256bb4198,cbd_2014_pathw
 alien-herpetofauna-belgium:taxon:f449e769066c3570ca3f117256bb4198,Africa,native range,en
 alien-herpetofauna-belgium:taxon:f4561399bd74e378c067a6b25a55eaf7,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:f4561399bd74e378c067a6b25a55eaf7,Bahamas | Cuba | US | Introduced elsewhere,native range,en
+alien-herpetofauna-belgium:taxon:f981ab8c911519c13b45eb115246e546,casual,degree of establishment,en
+alien-herpetofauna-belgium:taxon:f981ab8c911519c13b45eb115246e546,cbd_2014_pathway:escape_pet,pathway,en
+alien-herpetofauna-belgium:taxon:f981ab8c911519c13b45eb115246e546,cbd_2014_pathway:release_other,pathway,en
+alien-herpetofauna-belgium:taxon:f981ab8c911519c13b45eb115246e546,North America,native range,en
 alien-herpetofauna-belgium:taxon:f9b512426db4c11d2a70ba8845c078ac,casual,degree of establishment,en
 alien-herpetofauna-belgium:taxon:f9b512426db4c11d2a70ba8845c078ac,cbd_2014_pathway:escape_pet,pathway,en
 alien-herpetofauna-belgium:taxon:f9b512426db4c11d2a70ba8845c078ac,cbd_2014_pathway:release_other,pathway,en
