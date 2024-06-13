@@ -224,83 +224,11 @@ species_profile <-
 
 In the description extension we want to include several important characteristics (hereafter referred to as descriptors) about the species:
 
-* Degree of establishment
-* Introduction pathway
 * Native range
 
 The structure of the description extension is slightly different from the other core/extension files: information for a specific taxon (linked to taxonID) is provided in **multipele** lines within the csv file: one line per taxon per descriptor. In this way, we are able to include multipele descriptors for each species. 
 
 For each descriptor, we create a separate dataframe to process the specific information. We always specify *which descriptor* we map (`type` column) and its *specific content* (`description` column). After the mapping of these Darwin Core terms `type` and `value`, we merge the dataframes to generate one single description extension. We then continue the mapping process by adding the other Darwin Core terms (which content is independent of the type of descriptor, such as `language`).
-
-### Pathway of introduction
-
-Create a dataframe with unique taxa only (ignoring multiple distribution rows):
-
-```{r}
-introduction_pathway <- input_data %>% distinct(taxon_id, .keep_all = TRUE)
-```
-
-Show unique values:
-
-```{r}
-introduction_pathway %>%
-  distinct("old_introduction_pathway_will_be_deleted") %>%
-  arrange("old_introduction_pathway_will_be_deleted")
-```
-
-Remove records for which `introduction_pathway` is `NA`:
-
-```{r}
-introduction_pathway %<>% 
-  filter(!is.na("old_introduction_pathway_will_be_deleted")) 
-```
-
-`introduction_pathway` contains multiple values (currently not more than 3), so we separate it in 2 columns:
-
-```{r}
-introduction_pathway %<>% separate("old_introduction_pathway_will_be_deleted", 
-  into = c("pathway_1", "pathway_2", "pathway_3"),
-  sep = "\\s\\|\\s",
-  remove = FALSE)
-```
-
-Gather in a `key` and `value` column:
-
-```{r}
-introduction_pathway %<>% gather(
-  key, value,
-  pathway_1, pathway_2,pathway_3,
-  na.rm = TRUE, # Also removes records for which there is no native_range_1
-  convert = FALSE
-)
-```
-
-Add prefix `cbd_2014_pathway:`
-
-```{r}
-introduction_pathway %<>% mutate(mapped_value = paste ("cbd_2014_pathway", value, sep = ":"))
-```
-
-Sumarize `value`
-
-```{r}
-introduction_pathway %>%
-  group_by(mapped_value) %>%
-  count()
-```
-
-Map `description`
-
-```{r}
-introduction_pathway %<>% mutate(description = mapped_value) 
-```
-
-Map `type` field
-
-```{r}
-introduction_pathway %<>% mutate(type = "pathway") 
-```
-
 
 
 ### Native range
@@ -343,7 +271,7 @@ native_range %<>% mutate(type = "native range")
 Union native range and degree of establishment:
 
 ```{r start_description_ext}
-description_ext <- bind_rows(introduction_pathway, native_range)
+description_ext <- bind_rows(native_range)
 ```
 
 Map the data to [Taxon Description](http://rs.gbif.org/extension/gbif/1.0/description.xml):
