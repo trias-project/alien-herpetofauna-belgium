@@ -39,11 +39,11 @@ library(inborutils)
 
 # Read source data
 
-The data is maintained in [this Google Spreadsheet](https://docs.google.com/spreadsheets/d/1AK68tBlXoplUcI4CfACNlz6mYfrBZodsGu5Lk59BuX0/edit#gid=0).
+The data is maintained in [this Google Spreadsheet](https://docs.google.com/spreadsheets/d/1LeXXbry2ArK2rngsmFjz_xErwE1KwQ8ujtvHNmTVA6E/edit#gid=961223689).
 Read the relevant worksheet (published as csv):
 
 ```{r read_source_data}
-input_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQXjwi5uuzwQUCKR0bfA179MDqvLPBvI9UaRC41S_4by5e2LE1sv0T0PhZdm9F43YubfPwYMITesksp/pub?output=csv", col_types = cols(.default = "c"))
+input_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTl8IEk2fProQorMu5xKQPdMXl3OQp-c0f6eBXitv0BiVFZ3JSJCde0PtbFXuETgguf6vK8b43FDX1C/pub?gid=961223689&single=true&output=csv", col_types = cols(.default = "c"))
 ```
 
 Copy the source data to the repository to keep track of changes:
@@ -308,7 +308,7 @@ distribution %<>% mutate(dwc_source = source)
 ### occurrenceRemarks
 
 ```{r}
-distribution %<>% mutate(dwc_occurrenceRemarks = remarks) 
+distribution %<>% mutate(dwc_occurrenceRemarks = occurrence_remarks) 
 ```
 
 ## Create species profile extension
@@ -421,20 +421,21 @@ Show unique values:
 
 ```{r}
 introduction_pathway %>%
-  distinct(introduction_pathway) %>%
-  arrange(introduction_pathway)
+  distinct("old_introduction_pathway_will_be_deleted") %>%
+  arrange("old_introduction_pathway_will_be_deleted")
 ```
 
 Remove records for which `introduction_pathway` is `NA`:
 
 ```{r}
-introduction_pathway %<>% filter(!is.na(introduction_pathway)) 
+introduction_pathway %<>% 
+  filter(!is.na("old_introduction_pathway_will_be_deleted")) 
 ```
 
 `introduction_pathway` contains multiple values (currently not more than 3), so we separate it in 2 columns:
 
 ```{r}
-introduction_pathway %<>% separate(introduction_pathway, 
+introduction_pathway %<>% separate("old_introduction_pathway_will_be_deleted", 
   into = c("pathway_1", "pathway_2", "pathway_3"),
   sep = "\\s\\|\\s",
   remove = FALSE)
