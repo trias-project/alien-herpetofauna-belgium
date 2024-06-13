@@ -139,15 +139,15 @@ Create a dataframe with all data (including multiple distributions). Map the dat
 ```{r}
 distribution <-
   input_data %>%
-  # mutate(
-  #   introduction_pathway_1 =
-  #     ifelse(is.na(introduction_pathway_1), "no value", introduction_pathway_1)
-  # ) %>%
-  # pivot_longer(
-  #   names_to = "key",
-  #   values_to = "pathway",
-  #   starts_with("introduction_pathway"),
-  #   values_drop_na = TRUE) %>%
+  mutate(
+    introduction_pathway_1 =
+      ifelse(is.na(introduction_pathway_1), "no value", introduction_pathway_1)
+  ) %>%
+  pivot_longer(
+    names_to = "key",
+    values_to = "pathway",
+    starts_with("introduction_pathway"),
+    values_drop_na = TRUE) %>%
   mutate(
     taxonID = taxon_id,
     locationID = case_when(
@@ -164,10 +164,10 @@ distribution <-
     occurrenceStatus = occurrence_status,
     establishmentMeans = establishment_means,
     degreeOfEstablishment = degree_of_establishment,
-    # pathway = case_when(
-    #   pathway == "no value" ~ NA,
-    #   .default = pathway
-    # ),
+    pathway = case_when(
+      pathway == "no value" ~ NA,
+      .default = pathway
+    ),
     eventDate = case_when(
       is.na(date_first_observation) & is.na(date_last_observation) ~ "",
       is.na(date_first_observation) ~ date_last_observation,
@@ -185,8 +185,7 @@ distribution <-
   ) %>%
   select(
     "taxonID", "locationID", "locality", "countryCode", "occurrenceStatus",
-    "establishmentMeans", "degreeOfEstablishment", #"pathway",
-    "eventDate",
+    "establishmentMeans", "degreeOfEstablishment", "pathway", "eventDate",
     "source", "occurrenceRemarks"
   ) %>%
   arrange(taxonID)
