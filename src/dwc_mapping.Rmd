@@ -163,7 +163,7 @@ distribution <-
     countryCode = country_code,
     occurrenceStatus = occurrence_status,
     establishmentMeans = establishment_means,
-    #degreeOfEstablishment = degree_of_establishment,
+    degreeOfEstablishment = degree_of_establishment,
     # pathway = case_when(
     #   pathway == "no value" ~ NA,
     #   .default = pathway
@@ -185,7 +185,7 @@ distribution <-
   ) %>%
   select(
     "taxonID", "locationID", "locality", "countryCode", "occurrenceStatus",
-    "establishmentMeans", #"degreeOfEstablishment", #"pathway",
+    "establishmentMeans", "degreeOfEstablishment", #"pathway",
     "eventDate",
     "source", "occurrenceRemarks"
   ) %>%
