@@ -52,11 +52,6 @@ Copy the source data to the repository to keep track of changes:
 ```{r}
 write_csv(input_data, here("data", "raw", "alien-herpetofauna-checklist_dump.csv"), na = "")
 ```
-Preview data:
-
-```{r}
-input_data %>% head(n = 5)
-```
 
 # Preprocessing
 
@@ -96,12 +91,6 @@ input_data %<>% mutate(taxon_id = paste(
   vdigest(paste(scientific_name, kingdom), algo = "md5"),
   sep = ":"
 ))
-```
-
-Preview data:
-
-```{r}
-input_data %>% head()
 ```
 
 # Darwin Core mapping
@@ -579,29 +568,6 @@ species_profile %<>% arrange(taxonID)
 description_ext %<>% arrange(taxonID)
 ```
 
-Preview taxon core:
-
-```{r}
-taxon %>% head(10)
-```
-
-Preview distribution extension:
-
-```{r}
-distribution %>% head(10)
-```
-
-Preview species profile extension:
-
-```{r}
-species_profile %>% head(10)
-```
-
-Preview description extension:
-
-```{r}
-description_ext %>% head(10)
-```
 
 Save to CSV:
 
