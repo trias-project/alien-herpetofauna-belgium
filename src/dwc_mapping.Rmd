@@ -232,34 +232,6 @@ The structure of the description extension is slightly different from the other 
 
 For each descriptor, we create a separate dataframe to process the specific information. We always specify *which descriptor* we map (`type` column) and its *specific content* (`description` column). After the mapping of these Darwin Core terms `type` and `value`, we merge the dataframes to generate one single description extension. We then continue the mapping process by adding the other Darwin Core terms (which content is independent of the type of descriptor, such as `language`).
 
-### Degree of establishment
-
-Create a dataframe with unique taxa only (ignoring multiple distribution rows):
-
-```{r}
-degree_of_establishment <- input_data %>% distinct(taxon_id, .keep_all = TRUE)
-```
-
-Show unique values:
-
-```{r}
-degree_of_establishment %>%
-  distinct(degree_of_establishment) %>%
-  arrange(degree_of_establishment)
-```
-
-Map `description`
-
-```{r}
-degree_of_establishment %<>% mutate(description = degree_of_establishment) 
-```
-
-Map `type`
-
-```{r}
-degree_of_establishment %<>% mutate(type = "degree of establishment") 
-```
-
 ### Pathway of introduction
 
 Create a dataframe with unique taxa only (ignoring multiple distribution rows):
@@ -371,7 +343,7 @@ native_range %<>% mutate(type = "native range")
 Union native range and degree of establishment:
 
 ```{r start_description_ext}
-description_ext <- bind_rows(degree_of_establishment, introduction_pathway, native_range)
+description_ext <- bind_rows(introduction_pathway, native_range)
 ```
 
 Map the data to [Taxon Description](http://rs.gbif.org/extension/gbif/1.0/description.xml):
