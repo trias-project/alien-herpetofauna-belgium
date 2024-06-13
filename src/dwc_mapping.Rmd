@@ -107,7 +107,7 @@ taxon <-
     language = "en",
     license = "http://creativecommons.org/publicdomain/zero/1.0/",
     rightsHolder = "INBO",
-    #accessRights = "https://www.inbo.be/en/norms-data-use",
+    accessRights = "https://www.inbo.be/en/norms-data-use",
     datasetID = "https://doi.org/10.15468/pnxu4c",
     institutionCode = "INBO",
     datasetName = "Checklist of alien herpetofauna of Belgium",
@@ -125,8 +125,7 @@ taxon <-
   ) %>% 
   arrange(taxonID) %>% 
   select(
-    "language", "license", "rightsHolder", #"accessRights", 
-    "datasetID",
+    "language", "license", "rightsHolder", "accessRights", "datasetID",
     "institutionCode", "datasetName", "taxonID", "scientificName", "kingdom", 
     "phylum", "class", "order", "family", "genus", "taxonRank",
     "nomenclaturalCode"
