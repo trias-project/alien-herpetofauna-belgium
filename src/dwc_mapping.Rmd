@@ -132,105 +132,66 @@ taxon <-
   )
 ```
 
-
 ## Create distribution extension
 
-```{r}
-distribution <- input_data
-```
-
-Map the data to [Species Distribution](http://rs.gbif.org/extension/gbif/1.0/distribution.xml).
-
-### taxonID
+Create a dataframe with all data (including multiple distributions). Map the data to [Species Distribution](http://rs.gbif.org/extension/gbif/1.0/distribution.xml).
 
 ```{r}
-distribution %<>% mutate(dwc_taxonID = taxon_id)
+distribution <-
+  input_data %>%
+  # mutate(
+  #   introduction_pathway_1 =
+  #     ifelse(is.na(introduction_pathway_1), "no value", introduction_pathway_1)
+  # ) %>%
+  # pivot_longer(
+  #   names_to = "key",
+  #   values_to = "pathway",
+  #   starts_with("introduction_pathway"),
+  #   values_drop_na = TRUE) %>%
+  mutate(
+    taxonID = taxon_id,
+    locationID = case_when(
+      location == "Flanders" ~ "ISO_3166-2:BE-VLG",
+      location == "Wallonia" ~ "ISO_3166-2:BE-WAL",
+      location == "Brussels" ~ "ISO_3166-2:BE-BRU"
+    ),
+    locality = case_when(
+      location == "Flanders" ~ "Flemish Region",
+      location == "Wallonia" ~ "Walloon Region",
+      location == "Brussels" ~ "Brussels-Capital Region"
+    ),
+    countryCode = country_code,
+    occurrenceStatus = occurrence_status,
+    establishmentMeans = establishment_means,
+    #degreeOfEstablishment = degree_of_establishment,
+    # pathway = case_when(
+    #   pathway == "no value" ~ NA,
+    #   .default = pathway
+    # ),
+    eventDate = case_when(
+      is.na(date_first_observation) & is.na(date_last_observation) ~ "",
+      is.na(date_first_observation) ~ date_last_observation,
+      date_first_observation == date_last_observation ~ date_first_observation,
+      TRUE ~ paste(date_first_observation, date_last_observation, sep = "/")
+    ),
+    # eventDate = case_when(
+    #   is.na(date_first_observation) & is.na(date_last_observation) ~ NA,
+    #   is.na(date_first_observation) & !is.na(date_last_observation) ~ paste0("/", date_last_observation),
+    #   !is.na(date_first_observation) & is.na(date_last_observation) ~ paste0(date_first_observation, "/"),
+    #   !is.na(date_first_observation) & !is.na(date_last_observation) ~ paste(date_first_observation, date_last_observation, sep = "/")
+    # ),
+    source = source,
+    occurrenceRemarks = occurrence_remarks
+  ) %>%
+  select(
+    "taxonID", "locationID", "locality", "countryCode", "occurrenceStatus",
+    "establishmentMeans", #"degreeOfEstablishment", #"pathway",
+    "eventDate",
+    "source", "occurrenceRemarks"
+  ) %>%
+  arrange(taxonID)
 ```
 
-### locationID
-
-Map values to [ISO 3166](https://www.iso.org/iso-3166-country-codes.html) country codes
-
-```{r}
-distribution %<>% mutate(dwc_locationID = case_when(
-  location == "Flanders" ~ "ISO_3166-2:BE-VLG",
-  location == "Wallonia" ~ "ISO_3166-2:BE-WAL",
-  location == "Brussels" ~ "ISO_3166-2:BE-BRU"
-))
-```
-
-### locality
-
-Use the location information to map `locality`:
-
-```{r}
-distribution %<>% mutate(dwc_locality = case_when(
-  location == "Flanders" ~ "Flemish Region",
-  location == "Wallonia" ~ "Walloon Region",
-  location == "Brussels" ~ "Brussels-Capital Region"
-))
-```
-
-### countryCode
-
-```{r}
-distribution %<>% mutate(dwc_countryCode = country_code) 
-```
-
-### occurrenceStatus
-
-```{r}
-distribution %<>% mutate(dwc_occurrenceStatus = occurrence_status) 
-```
-
-### establishmentMeans
-
-```{r}
-distribution %<>% mutate(dwc_establishmentMeans = "introduced") 
-```
-
-### eventDate
-
-Screen `date_first_observation` and `date_last_observation`
-
-```{r}
-distribution %>% 
-  select(date_first_observation, date_last_observation) %>% 
-  group_by_all() %>% 
-  summarize(records = n())
-```
-
-Map eventDate information:
-
-```{r}
-distribution %<>% mutate(dwc_eventDate = case_when(
-  is.na(date_first_observation) & is.na(date_last_observation) ~ "",
-  is.na(date_first_observation) ~ date_last_observation,
-  date_first_observation == date_last_observation ~ date_first_observation,
-  TRUE ~ paste(date_first_observation, date_last_observation, sep = "/")
-))
-```
-
-Summary:
-
-```{r}
-distribution %>% 
-  select(date_first_observation, date_last_observation, dwc_eventDate) %>% 
-  group_by_all() %>% 
-  summarize(records = n())
-```
-
-### source
-
-```{r}
-distribution %<>% mutate(dwc_source = source) 
-```
-
-### occurrenceRemarks
-
-```{r}
-distribution %<>% mutate(dwc_occurrenceRemarks = occurrence_remarks) 
-```
 
 ## Create species profile extension
 
@@ -475,7 +436,6 @@ description_ext %<>% mutate(dwc_language = "en")
 Remove the original columns for each of the generated files:
 
 ```{r}
-distribution %<>% select(starts_with("dwc_")) 
 species_profile %<>% select(starts_with("dwc_")) 
 description_ext %<>% select(starts_with("dwc_"))
 ```
@@ -483,7 +443,6 @@ description_ext %<>% select(starts_with("dwc_"))
 Drop the `dwc_` prefix:
 
 ```{r}
-colnames(distribution) <- str_remove(colnames(distribution), "dwc_")
 colnames(species_profile) <- str_remove(colnames(species_profile), "dwc_")
 colnames(description_ext) <- str_remove(colnames(description_ext), "dwc_")
 ```
@@ -491,7 +450,6 @@ colnames(description_ext) <- str_remove(colnames(description_ext), "dwc_")
 Sort on `taxonID` to group description information per taxon:
 
 ```{r}
-distribution %<>% arrange(taxonID)
 species_profile %<>% arrange(taxonID)
 description_ext %<>% arrange(taxonID)
 ```
