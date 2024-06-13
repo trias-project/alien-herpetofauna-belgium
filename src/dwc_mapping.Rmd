@@ -12,14 +12,9 @@ output:
     toc: yes
     toc_depth: 3
     toc_float: yes
-#  pdf_document:
-#    df_print: kable
-#    number_sections: yes
-#    toc: yes
-#    toc_depth: 3
 ---
 
-This document describes how we map the checklist data to Darwin Core. The source file for this document can be found [here](https://github.com/trias-project/alien-scheldt-checklist/blob/master/src/dwc_mapping.Rmd).
+This document describes how we map the checklist data to Darwin Core. The source file for this document can be found [here](https://github.com/trias-project/alien-herpetofauna-belgium/blob/main/src/dwc_mapping.Rmd).
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = TRUE)
@@ -29,13 +24,11 @@ Load libraries:
 
 ```{r message = FALSE}
 library(tidyverse)      # To do data science
-library(googlesheets4)  # To import data from google sheets
 library(magrittr)       # To use %<>% pipes
 library(here)           # To find files
 library(janitor)        # To clean input data
 library(digest)         # To generate hashes
 library(rgbif)
-library(inborutils)
 ```
 
 # Read source data
@@ -44,13 +37,13 @@ The data is maintained in [this Google Spreadsheet](https://docs.google.com/spre
 Read the relevant worksheet (published as csv):
 
 ```{r read_source_data}
-input_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTl8IEk2fProQorMu5xKQPdMXl3OQp-c0f6eBXitv0BiVFZ3JSJCde0PtbFXuETgguf6vK8b43FDX1C/pub?gid=961223689&single=true&output=csv", col_types = cols(.default = "c"))
+raw_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTl8IEk2fProQorMu5xKQPdMXl3OQp-c0f6eBXitv0BiVFZ3JSJCde0PtbFXuETgguf6vK8b43FDX1C/pub?gid=961223689&single=true&output=csv", col_types = cols(.default = "c"))
 ```
 
 Copy the source data to the repository to keep track of changes:
 
 ```{r}
-write_csv(input_data, here("data", "raw", "alien-herpetofauna-checklist_dump.csv"), na = "")
+write_csv(raw_data, here("data", "raw", "alien-herpetofauna-checklist_dump.csv"), na = "")
 ```
 
 # Preprocessing
@@ -60,7 +53,9 @@ write_csv(input_data, here("data", "raw", "alien-herpetofauna-checklist_dump.csv
 Clean dataset names:
 
 ```{r}
-input_data %<>% clean_names()
+input_data <-
+  raw_data %>%  
+  clean_names()
 ```
 
 ## Match with the GBIF backboe
