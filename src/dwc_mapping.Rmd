@@ -95,110 +95,42 @@ input_data %<>% mutate(taxon_id = paste(
 
 # Darwin Core mapping
 
-## Create taxon core
+## Taxon core
 
-Create a dataframe with unique taxa only (ignoring multiple distribution rows):
-
-```{r}
-taxon <- input_data %>% distinct(taxon_id, .keep_all = TRUE)
-```
-
-Map the data to [Darwin Core Taxon](http://rs.gbif.org/core/dwc_taxon_2015-04-24.xml).
-
-### language
+Create a dataframe with unique taxa only (ignoring multiple distribution rows). Map the data to [Darwin Core Taxon](http://rs.gbif.org/core/dwc_taxon_2015-04-24.xml).
 
 ```{r}
-taxon %<>% mutate(dwc_language = "en")
-```
-
-### license
-
-```{r}
-taxon %<>% mutate(dwc_license = "http://creativecommons.org/publicdomain/zero/1.0/") 
-```
-
-### rightsHolder
-
-```{r}
-taxon %<>% mutate(dwc_rightsHolder = "INBO")
-```
-
-### datasetID
-
-```{r}
-taxon %<>% mutate(dwc_datasetID = "https://doi.org/10.15468/pnxu4c") 
-```
-
-### institutionCode
-
-```{r}
-taxon %<>% mutate(dwc_institutionCode = "INBO")
-```
-
-### datasetName
-
-```{r}
-taxon %<>% mutate(dwc_datasetName = "Checklist of alien herpetofauna of Belgium")
-```
-
-### taxonID
-
-```{r}
-taxon %<>% mutate(dwc_taxonID = taxon_id)
-```
-
-### scientificName
-
-```{r}
-taxon %<>% mutate(dwc_scientificName = scientific_name)
-```
-
-### kingdom
-
-```{r}
-taxon %<>% mutate(dwc_kingdom = kingdom)
-```
-
-### phylum
-
-```{r}
-taxon %<>% mutate(dwc_phylum = phylum)
-```
-
-### class
-
-```{r}
-taxon %<>% mutate(dwc_class = class)
-```
-
-### order
-
-```{r}
-taxon %<>% mutate(dwc_order = order)
-```
-
-### family
-
-```{r}
-taxon %<>% mutate(dwc_family = family)
-```
-
-### genus
-
-```{r}
-taxon %<>% mutate(dwc_genus = genus)
-```
-
-### taxonRank
-
-```{r}
-taxon %<>% mutate(dwc_taxonRank = taxon_rank)
-```
-
-### nomenclaturalCode
-
-```{r}
-taxon %<>% mutate(dwc_nomenclaturalCode = nomenclatural_code)
+taxon <-
+  input_data %>%
+  distinct(taxon_id, .keep_all = TRUE) %>%
+  mutate(
+    language = "en",
+    license = "http://creativecommons.org/publicdomain/zero/1.0/",
+    rightsHolder = "INBO",
+    #accessRights = "https://www.inbo.be/en/norms-data-use",
+    datasetID = "https://doi.org/10.15468/pnxu4c",
+    institutionCode = "INBO",
+    datasetName = "Checklist of alien herpetofauna of Belgium",
+    taxonID = taxon_id,
+    scientificName = scientific_name,
+    kingdom = kingdom,
+    phylum = phylum,
+    class = class,
+    order = order,
+    family = family,
+    genus = genus,
+    taxonRank = taxon_rank,
+    nomenclaturalCode = nomenclatural_code,
+    .keep = "none"
+  ) %>% 
+  arrange(taxonID) %>% 
+  select(
+    "language", "license", "rightsHolder", #"accessRights", 
+    "datasetID",
+    "institutionCode", "datasetName", "taxonID", "scientificName", "kingdom", 
+    "phylum", "class", "order", "family", "genus", "taxonRank",
+    "nomenclaturalCode"
+  )
 ```
 
 
@@ -544,7 +476,6 @@ description_ext %<>% mutate(dwc_language = "en")
 Remove the original columns for each of the generated files:
 
 ```{r}
-taxon %<>% select(starts_with("dwc_")) 
 distribution %<>% select(starts_with("dwc_")) 
 species_profile %<>% select(starts_with("dwc_")) 
 description_ext %<>% select(starts_with("dwc_"))
@@ -553,7 +484,6 @@ description_ext %<>% select(starts_with("dwc_"))
 Drop the `dwc_` prefix:
 
 ```{r}
-colnames(taxon) <- str_remove(colnames(taxon), "dwc_")
 colnames(distribution) <- str_remove(colnames(distribution), "dwc_")
 colnames(species_profile) <- str_remove(colnames(species_profile), "dwc_")
 colnames(description_ext) <- str_remove(colnames(description_ext), "dwc_")
@@ -562,7 +492,6 @@ colnames(description_ext) <- str_remove(colnames(description_ext), "dwc_")
 Sort on `taxonID` to group description information per taxon:
 
 ```{r}
-taxon %<>% arrange(taxonID)
 distribution %<>% arrange(taxonID)
 species_profile %<>% arrange(taxonID)
 description_ext %<>% arrange(taxonID)
