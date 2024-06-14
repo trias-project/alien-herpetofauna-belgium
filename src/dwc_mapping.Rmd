@@ -135,15 +135,17 @@ Create a dataframe with all data (including multiple distributions). Map the dat
 ```{r}
 distribution <-
   input_data %>%
-  mutate(
-    introduction_pathway_1 =
-      ifelse(is.na(introduction_pathway_1), "no value", introduction_pathway_1)
-  ) %>%
+  # pathway
   pivot_longer(
-    names_to = "key",
-    values_to = "pathway",
+    names_to = "key", 
+    values_to = "pathway", 
     starts_with("introduction_pathway"),
-    values_drop_na = TRUE) %>%
+    values_drop_na = FALSE) %>%
+  filter( # keep NA value for species with no pathway provided
+    !is.na(pathway) |
+      (is.na(pathway) & key == "introduction_pathway_1")
+      ) %>% 
+  # other terms
   mutate(
     taxonID = taxon_id,
     locationID = case_when(
@@ -160,10 +162,6 @@ distribution <-
     occurrenceStatus = occurrence_status,
     establishmentMeans = establishment_means,
     degreeOfEstablishment = degree_of_establishment,
-    pathway = case_when(
-      pathway == "no value" ~ NA,
-      .default = pathway
-    ),
     eventDate = case_when(
       is.na(date_first_observation) & is.na(date_last_observation) ~ NA,
       is.na(date_first_observation) ~ paste0("/", date_last_observation),
