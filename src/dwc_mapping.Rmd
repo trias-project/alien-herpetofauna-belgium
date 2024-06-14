@@ -59,22 +59,6 @@ input_data <-
   clean_names()
 ```
 
-## Match with the GBIF backboe
-
-We screen the scientific names for potential errors by matching them to the GBIF backbone
-
-```{r}
-species_df_matched <- gbif_species_name_match(
-  df = input_data, 
-  name = "scientific_name")
-```
-```{r}
-species_df_matched %>% 
-    select(scientific_name, scientificName, status, confidence, synonym, matchType) %>% 
-    filter(matchType != "EXACT") %>% 
-    arrange(matchType)
-```
-
 ## Generate Taxon ID
 
 To link taxa with information in the extension(s), each taxon needs a unique and relatively stable `taxonID`. Here we create one in the form of `dataset_shortname:taxon:hash`, where `hash` is unique code based on scientific name and kingdom (that will remain the same as long as scientific name and kingdom remain the same):
@@ -210,8 +194,7 @@ species_profile <-
 
 ## Description extension
 
-In the description extension we want to include several important characteristics (hereafter referred to as descriptors) about the species:
-- Native range
+In the description extension we want to include the native range of a species
 
 ```{r}
 description <-
