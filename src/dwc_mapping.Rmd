@@ -38,13 +38,13 @@ The data is maintained in [this Google Spreadsheet](https://docs.google.com/spre
 Read the relevant worksheet (published as csv):
 
 ```{r read_source_data}
-raw_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTl8IEk2fProQorMu5xKQPdMXl3OQp-c0f6eBXitv0BiVFZ3JSJCde0PtbFXuETgguf6vK8b43FDX1C/pub?gid=961223689&single=true&output=csv", col_types = cols(.default = "c"))
+input_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTl8IEk2fProQorMu5xKQPdMXl3OQp-c0f6eBXitv0BiVFZ3JSJCde0PtbFXuETgguf6vK8b43FDX1C/pub?gid=961223689&single=true&output=csv", col_types = cols(.default = "c"))
 ```
 
 Copy the source data to the repository to keep track of changes:
 
 ```{r}
-write_csv(raw_data, here("data", "raw", "alien-herpetofauna-checklist_dump.csv"), na = "")
+write_csv(input_data, here("data", "raw", "alien-herpetofauna-checklist_dump.csv"), na = "")
 ```
 
 # Preprocessing
@@ -55,20 +55,19 @@ Clean dataset names:
 
 ```{r}
 input_data <-
-  raw_data %>%  
+  input_data %>%  
   clean_names()
 ```
 
 ## Generate Taxon ID
 
-To link taxa with information in the extension(s), each taxon needs a unique and relatively stable `taxonID`. Here we create one in the form of `dataset_shortname:taxon:hash`, where `hash` is unique code based on scientific name and kingdom (that will remain the same as long as scientific name and kingdom remain the same):
+To link taxa with information in the extension(s), each taxon needs a unique and relatively stable `taxonID`. Here we create one in the form of `dataset_shortname:taxon:hash`, where `hash` is unique code based on scientific name and kingdom. This hash was created the first time the dataset is published and was added to the raw data.
 
 ```{r}
-vdigest <- Vectorize(digest) # Vectorize digest function to work with vectors
 input_data %<>% mutate(taxon_id = paste(
   "alien-herpetofauna-belgium",
   "taxon",
-  vdigest(paste(scientific_name, kingdom), algo = "md5"),
+  .data$taxon_id_hash,
   sep = ":"
 ))
 ```
